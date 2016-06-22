@@ -1,5 +1,15 @@
 <template>
   <div id="app">
+
+    <ui-toolbar brand="Vue UI" :title="currentComponent.title" colored>
+      <div slot="actions">
+        <ui-icon-button type="clear" color="white" icon="arrow_back"></ui-icon-button>
+        <ui-icon-button type="clear" color="white" icon="star_border"></ui-icon-button>
+        <ui-icon-button type="clear" color="white" icon="more_vert" has-dropdown-menu
+          :menu-options="menu" dropdown-position="bottom right"></ui-icon-button>
+      </div>
+    </ui-toolbar>
+
     <div class="sidebar desktop">
       <div class="brand">
         <h1 class="title">VUE UI</h1>
@@ -9,28 +19,30 @@
         <div class="menu-header">Components</div>
         <a class="menu-item" v-for="item in menu | orderBy 'id'"
           :class="{ 'active': currentComponent.id === item.id }"
-          :href="'#/' + item.id" v-text="item.text"></a>
+          :href="'#/' + item.id" v-text="item.title"></a>
       </ul>
     </div>
 
-    <div class="page">
+    <main class="page">
       <div class="container">
         <component :is="currentComponent.id"></component>
       </div>
-    </div>
+    </main>
   </div>
 </template>
 
 <script>
 /* global location */
 import UiButton from '../src/ui-button'
+import UiToolbar from '../src/ui-toolbar'
+import UiIconButton from '../src/ui-icon-button'
 
 import UiAlertDocs from './components/UiAlertDocs'
 import UiButtonDocs from './components/UiButtonDocs'
 
 let menu = [
-  { id: 'ui-alert-docs', text: 'UiAlert' },
-  { id: 'ui-button-docs', text: 'UiButton' }
+  { id: 'ui-alert-docs', title: 'Alert' },
+  { id: 'ui-button-docs', title: 'Button' }
 ]
 
 export default {
@@ -88,6 +100,8 @@ export default {
 
   components: {
     UiButton,
+    UiToolbar,
+    UiIconButton,
 
     UiAlertDocs,
     UiButtonDocs
