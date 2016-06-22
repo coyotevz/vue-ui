@@ -19,6 +19,16 @@
         Okilly dokilly, your account was updated successfully.
       </ui-alert>
     </div>
-    
+
   </section>
 </template>
+
+<script>
+import UiAlert from '../../src/ui-alert'
+
+export default {
+  components: {
+    UiAlert
+  }
+}
+</script>
