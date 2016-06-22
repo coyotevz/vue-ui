@@ -1,0 +1,127 @@
+<template>
+  <div id="app">
+    <div class="sidebar desktop">
+      <div class="brand">
+        <h1 class="title">VUE UI</h1>
+      </div>
+
+      <ul class="menu">
+        <div class="menu-header">Components</div>
+        <a class="menu-item" v-for="item in menu | orderBy 'id'"
+          :class="{ 'active': currentComponent.id === item.id }"
+          :href="'#/' + item.id" v-text="item.text"></a>
+      </ul>
+    </div>
+
+    <div class="page">
+      <div class="container">
+        <component :is="currentComponent.id"></component>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+/* global location */
+import UiButton from '../src/ui-button'
+
+import UiAlertDocs from './components/UiAlertDocs'
+import UiButtonDocs from './components/UiButtonDocs'
+
+let menu = [
+  { id: 'ui-alert-docs', text: 'UiAlert' },
+  { id: 'ui-button-docs', text: 'UiButton' }
+]
+
+export default {
+  data () {
+    return {
+      showSidebar: false,
+      currentComponent: menu[0],
+      menu
+    }
+  },
+
+  ready () {
+    this.navigate(true)
+    window.addEventListener('hashchange', () => this.navigate())
+  },
+
+  methods: {
+    navigate (onPageLoad) {
+      let component = location.hash.length
+        ? location.hash.substring(2) : null
+
+      if (component) {
+        this.currentComponent = this.findComponentById(component)
+
+        // Reset the document scroll position
+        document.body.scrollTop = 0
+
+        if (onPageLoad) {
+          this.$nextTick(() => {
+            document.querySelector('.menu a.active').scrollIntoView()
+          })
+        }
+      }
+
+      if (this.showSidebar) {
+        this.toggleSidebar()
+      }
+    },
+
+    findComponentById (id) {
+      for (var i = 0; i < this.menu.length; i++) {
+        if (this.menu[i].id === id) {
+          return this.menu[i]
+        }
+      }
+
+      // Falback to first item
+      return this.menu[0]
+    },
+
+    toggleSidebar () {
+      this.showSidebar = !this.showSidebar
+    }
+  },
+
+  components: {
+    UiButton,
+
+    UiAlertDocs,
+    UiButtonDocs
+  }
+}
+</script>
+
+<style>
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#app {
+  color: #2c3e50;
+  margin-top: -100px;
+  max-width: 600px;
+  font-family: Roboto, Helvetica, sans-serif;
+  text-align: center;
+}
+
+#app a {
+  color: #42b983;
+  text-decoration: none;
+}
+
+.logo {
+  width: 100px;
+  height: 100px
+}
+</style>

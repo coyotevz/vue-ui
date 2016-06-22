@@ -1,0 +1,15 @@
+/**
+ * Basd on mdl
+ */
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function rgba-tpl($color, $alpha) {
+  @if type-of($color) == color {
+    @return rgba($color, $alpha);
+  } @else {
+    @return unquote("rgba(#{$color}, #{$alpha})");
+  }
+}

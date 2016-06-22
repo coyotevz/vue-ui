@@ -1,0 +1,46 @@
+/**
+ * Based on mdl variables
+ */
+
+$preferred_font: 'Roboto', 'Helvetica', 'Arial', sans-serif !default;
+$performance_font: 'Helvetica', 'Arial', sans-serif !default;
+
+@import "color-definitions";
+@import "functions";
+
+/* Color */
+$trim-color-clases: false !default;
+
+$color-primary: $palette-indigo-500 !default;
+$color-primary-dark: $palette-indigo-700 !default;
+$color-accent: $palette-pink-A200 !default;
+
+$color-primary-contrast: $color-dark-contrast !default;
+$color-accent-contrars: $color-dark-contrast !default;
+
+/* Typography */
+$text-color-primary: rgba-tpl($color-black, 0.87) !default;
+$text-link-color: $color-accent !default;
+
+/* Buttons */
+/* Etc */
+
+/* Grid */
+$grid-desktop-columns: 12 !default;
+$grid-desktop-gutter: 16px !default;
+$grid-desktop-margin: 16px !default;
+
+$grid-desktop-breakpoint: 840px !default;
+
+$grid-tablet-columns: 8 !default;
+$grid-tablet-gutter: $grid-desktop-gutter !default;
+$grid-tablet-margin: $grid-desktop-margin !default;
+
+$grid-tablet-breakpoint: 480px !default;
+
+$grid-phone-columns: 4 !default;
+$grid-phone-gutter: $grid-desktop-gutter !default;
+$grid-phone-margin: $grid-desktop-margin !default;
+
+$grid-cell-default-columns: $grid-phone-columns !default;
+$grid-max-columns: $grid-desktop-columns !default;
