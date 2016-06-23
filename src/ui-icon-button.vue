@@ -68,7 +68,7 @@ export default {
   background: none;
   outline: none;
   border: none;
-  poasition: relative;
+  position: relative;
   overflow: hidden;
 
   // Fix for border radius not clipping internal content of positioned elements
