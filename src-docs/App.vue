@@ -33,16 +33,18 @@
 
 <script>
 /* global location */
-import UiButton from '../src/ui-button'
-import UiToolbar from '../src/ui-toolbar'
-import UiIconButton from '../src/ui-icon-button'
+import UiButton from 'src/ui-button'
+import UiToolbar from 'src/ui-toolbar'
+import UiIconButton from 'src/ui-icon-button'
 
 import UiAlertDocs from './components/UiAlertDocs'
 import UiButtonDocs from './components/UiButtonDocs'
+import UiRippleInkDocs from './components/UiRippleInkDocs'
 
 let menu = [
   { id: 'ui-alert-docs', title: 'Alert' },
-  { id: 'ui-button-docs', title: 'Button' }
+  { id: 'ui-button-docs', title: 'Button' },
+  { id: 'ui-ripple-ink-docs', title: 'Ripple Ink' }
 ]
 
 export default {
@@ -104,7 +106,8 @@ export default {
     UiIconButton,
 
     UiAlertDocs,
-    UiButtonDocs
+    UiButtonDocs,
+    UiRippleInkDocs
   }
 }
 </script>
@@ -123,19 +126,14 @@ body {
 
 #app {
   color: #2c3e50;
-  margin-top: -100px;
-  max-width: 600px;
+  // margin-top: -100px;
+  // max-width: 600px;
   font-family: Roboto, Helvetica, sans-serif;
-  text-align: center;
+  // text-align: center;
 }
 
-#app a {
+#app .menu a {
   color: #42b983;
   text-decoration: none;
-}
-
-.logo {
-  width: 100px;
-  height: 100px
 }
 </style>

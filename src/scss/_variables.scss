@@ -5,6 +5,8 @@
 $preferred_font: 'Roboto', 'Helvetica', 'Arial', sans-serif !default;
 $performance_font: 'Helvetica', 'Arial', sans-serif !default;
 
+$font-stack: $preferred_font;
+
 @import "color-definitions";
 @import "functions";
 
@@ -18,9 +20,19 @@ $color-accent: $palette-pink-A200 !default;
 $color-primary-contrast: $color-dark-contrast !default;
 $color-accent-contrars: $color-dark-contrast !default;
 
+$color-error: $palette-red-500 !default;
+$color-info: $palette-blue-500 !default;
+$color-success: $palette-green-500 !default;
+$color-warning: $palette-orange-500 !default;
+
 /* Typography */
 $text-color-primary: rgba-tpl($color-black, 0.87) !default;
 $text-link-color: $color-accent !default;
+$text-color-secondary: rgba-tpl($color-black, 0.54) !default;
+
+$color-primary-hint: rgba-tpl($color-black, 0.38) !default;
+$color-primary-disabled: $color-primary-hint !default;
+$color-primary-divider: rgba-tpl($color-black, 0.12) !default;
 
 /* Buttons */
 /* Etc */
