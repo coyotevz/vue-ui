@@ -45,7 +45,7 @@
         The alert has no icon and cannot be dismissed.
       </ui-alert>
 
-      <ui-alert id="special-note" :dismissible="false" hide-icon >
+      <ui-alert class="special-note" :dismissible="false" hide-icon >
         <b>Note: </b>Dialogs use the HTML &lt;dialog&gt; element, which currently has very limited cross-browser support. To ensure support across all modern browsers, pelase consider using a polyfill or creating your own. There is no polyfill included with VUE UI.
       </ui-alert>
     </div>
@@ -62,15 +62,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@import 'src/scss/variables';
-
-#special-note {
-  max-width: 640px;
-
-  .ui-alert-body {
-    background-color: $palette-yellow-100;
-  }
-}
-</style>

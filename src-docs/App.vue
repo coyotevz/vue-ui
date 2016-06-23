@@ -112,7 +112,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import 'src/scss/variables';
 html {
   height: 100%;
 }
@@ -135,5 +136,12 @@ body {
 #app .menu a {
   color: #42b983;
   text-decoration: none;
+}
+
+.special-note {
+  max-width: 640px;
+  .ui-alert-body {
+    background-color: $palette-yellow-100;
+  }
 }
 </style>
