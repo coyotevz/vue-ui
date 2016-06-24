@@ -21,10 +21,11 @@
 
     <h3>Examples</h3>
     <div class="demo">
-      <h4>Color: blue</h4>
 
+      <h4>Color: blue</h4>
       <div class="group tv-shows custom-color color-blue">
-        <image-pane inline-template :image="show.image" v-for="show in tvShows">
+        <image-pane inline-template :image="show.image"
+          v-for="show in tvShows">
           <div class="image-pane" v-el:show
             :style="{ 'background-image': 'url(' + image + ')' }">
             <ui-ripple-ink :trigger="$els.show"></ui-ripple-ink>
@@ -33,9 +34,9 @@
       </div>
 
       <h4>Color: orange, Opacity: 0.95</h4>
-
       <div class="group the-simpsons custom-color color-orange custom-opacity">
-        <image-pane inline-template :image="simpson.image" v-for="simpson in theSimpsons">
+        <image-pane inline-template :image="simpson.image"
+          v-for="simpson in theSimpsons">
           <div class="image-pane" v-el:portait
             :style="{ 'background-image': 'url(' + image + ')' }">
             <ui-ripple-ink :trigger="$els.portait"></ui-ripple-ink>
@@ -52,33 +53,21 @@ import UiRippleInk from 'src/ui-ripple-ink'
 import UiAlert from 'src/ui-alert'
 
 let tvShows = [
-  {
-    name: 'Better Call Saul',
-    image: 'http://i.imgur.com/SwZPSS2.jpg'
-  }, {
-    name: 'Breaking Bad',
-    image: 'http://i.imgur.com/tz6FJeN.jpg'
-  }, {
-    name: 'Sherlock',
-    image: 'http://i.imgur.com/Pf1TkJY.jpg'
-  }, {
-    name: 'The Simpsons',
-    image: 'http://i.imgur.com/HJmBlzf.jpg'
-  }
+  { name: 'Better Call Saul', image: 'http://i.imgur.com/SwZPSS2.jpg' },
+  { name: 'Breaking Bad', image: 'http://i.imgur.com/tz6FJeN.jpg' },
+  { name: 'Sherlock', image: 'http://i.imgur.com/Pf1TkJY.jpg' },
+  { name: 'The Simpsons', image: 'http://i.imgur.com/HJmBlzf.jpg' }
 ]
 
 let theSimpsons = [
   {
-    value: 'maggie',
-    text: 'Maggie Simpson',
+    value: 'maggie', text: 'Maggie Simpson',
     image: 'http://i.imgur.com/eK26qtK.jpg'
   }, {
-    value: 'lisa',
-    text: 'Lisa Simpson',
+    value: 'lisa', text: 'Lisa Simpson',
     image: 'http://i.imgur.com/wIb44g9.jpg'
   }, {
-    value: 'bart',
-    text: 'Bart Simpson',
+    value: 'bart', text: 'Bart Simpson',
     image: 'http://i.imgur.com/XkEz9zg.jpg'
   }
 ]
