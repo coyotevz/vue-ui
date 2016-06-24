@@ -64,6 +64,10 @@ export default {
     flat: {
       type: Boolean,
       default: false
+    },
+    fixed: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -73,6 +77,9 @@ export default {
 
       if (!this.flat) {
         classes.push('ui-toolbar-raised')
+      }
+      if (this.fixed) {
+        classes.push('ui-toolbar-fixed')
       }
       if (this.textColor !== null) {
         classes.push('text-color-' + this.textColor)
@@ -146,6 +153,11 @@ export default {
       top: 0;
     }
   }
+}
+
+.ui-toolbar-fixed {
+  position: fixed;
+  width: 100vw;
 }
 
 .ui-toolbar-raised {

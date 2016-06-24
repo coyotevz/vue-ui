@@ -1,33 +1,35 @@
 <template>
-  <div id="app" class="ui-layout">
+  <div id="app" class="ui-layout-container">
+    <div class="ui-layout">
 
-    <ui-toolbar brand="Vue UI" :title="currentComponent.title" colored>
-      <div slot="actions">
-        <ui-icon-button type="clear" color="white" icon="arrow_back"></ui-icon-button>
-        <ui-icon-button type="clear" color="white" icon="star_border"></ui-icon-button>
-        <ui-icon-button type="clear" color="white" icon="more_vert" has-dropdown-menu
-          :menu-options="menu" dropdown-position="bottom right"></ui-icon-button>
+      <ui-toolbar class="ui-layout-header" brand="Vue UI" :title="currentComponent.title" colored fixed>
+        <div slot="actions">
+          <ui-icon-button type="clear" color="white" icon="arrow_back"></ui-icon-button>
+          <ui-icon-button type="clear" color="white" icon="star_border"></ui-icon-button>
+          <ui-icon-button type="clear" color="white" icon="more_vert" has-dropdown-menu
+            :menu-options="menu" dropdown-position="bottom right"></ui-icon-button>
+        </div>
+      </ui-toolbar>
+
+      <div class="sidebar desktop">
+        <div class="brand">
+          <h1 class="title">VUE UI</h1>
+        </div>
+
+        <ul class="menu">
+          <div class="menu-header">Components</div>
+          <a class="menu-item" v-for="item in menu | orderBy 'id'"
+            :class="{ 'active': currentComponent.id === item.id }"
+            :href="'#/' + item.id" v-text="item.title"></a>
+        </ul>
       </div>
-    </ui-toolbar>
 
-    <div class="sidebar desktop">
-      <div class="brand">
-        <h1 class="title">VUE UI</h1>
-      </div>
-
-      <ul class="menu">
-        <div class="menu-header">Components</div>
-        <a class="menu-item" v-for="item in menu | orderBy 'id'"
-          :class="{ 'active': currentComponent.id === item.id }"
-          :href="'#/' + item.id" v-text="item.title"></a>
-      </ul>
+      <main class="page ui-layout-content">
+        <div class="container">
+          <component :is="currentComponent.id"></component>
+        </div>
+      </main>
     </div>
-
-    <main class="page">
-      <div class="container">
-        <component :is="currentComponent.id"></component>
-      </div>
-    </main>
   </div>
 </template>
 
