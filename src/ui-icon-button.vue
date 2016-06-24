@@ -212,4 +212,43 @@ export default {
     }
   }
 }
+
+.ui-icon-button-clear {
+  background-color: transparent;
+
+  body[modality="keyboard"] &:focus,
+  &:hover:not([disabled]),
+  &.dropdown-open {
+    background-color: rgba($color-black, 0.1);
+  }
+
+  &.color-white {
+    color: $text-color-secondary;
+
+    body[modality="keyboard"] &:focus {
+      border: 2px solid rgba($color-white, 0.8);
+    }
+
+    .ui-icon-button-icon {
+      color: $color-white;
+    }
+  }
+
+  &.color-black {
+    color: $text-color-secondary;
+
+    body[modality="keyboard"] &:focus {
+      border: 2px solid rgba($color-black, 0.25);
+    }
+
+    .ui-icon-button-icon {
+      color: $text-color-secondary;
+    }
+  }
+}
+
+.ui-icon-button-icon {
+  width: initial; // Firefox: needs the width and the height reset for flexbox centering
+  height: initial;
+}
 </style>

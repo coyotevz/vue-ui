@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="ui-layout">
 
     <ui-toolbar brand="Vue UI" :title="currentComponent.title" colored>
       <div slot="actions">

@@ -172,9 +172,12 @@ export default {
   flex-shrink: 0;
 }
 
-.ui-toolbar-nav-icon,
 .ui-toolbar-brand-text {
   padding-right: 8px;
+}
+
+.ui-toolbar-nav-icon {
+  margin-right: 8px;
 }
 
 .ui-toolbar-brand {
