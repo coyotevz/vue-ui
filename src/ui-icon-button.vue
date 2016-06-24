@@ -4,15 +4,25 @@
     v-el:button>
     <ui-icon class="ui-icon-button-icon" :icon="icon" v-show="!loading"></ui-icon>
 
+    <!--ui-progress-circular class="ui-icon-button-spinner" :color="spinnerColor"
+      :size="24" :stroke="4.5" disable-transition v-show="loading">
+    </ui-progress-circular-->
+
     <ui-ripple-ink v-if="!hideRippleInk && !disabled" :trigger="$els.button"></ui-ripple-ink>
+
+    <!--ui-tooltip :trigger="$els.button" :content="tooltip"
+      :position="tooltipPosition" v-if="tooltip"></ui-tooltip-->
+
+    <!-- TODO: menu -->
+    <!-- TODO: popover -->
   </button>
 </template>
 
 <script>
 import UiIcon from './ui-icon'
-import UiRippleInk from './ui-ripple-ink'
 
 import disabled from './directives/disabled'
+import showRippleInk from './mixins/show-ripple-ink'
 
 export default {
   name: 'ui-icon-button',
@@ -44,16 +54,20 @@ export default {
   },
 
   computed: {
-    styleClases () {
+    styleClasses () {
+      console.log(this.type, this.color)
       let classes = [this.type, this.color]
       return classes
     }
   },
 
   components: {
-    UiIcon,
-    UiRippleInk
+    UiIcon
   },
+
+  mixins: [
+    showRippleInk
+  ],
 
   directives: {
     disabled
@@ -146,6 +160,56 @@ export default {
     }
   }
 
-  // TODO
+  &.color-accent {
+    background-color: $color-accent;
+
+    &:hover:hot([disabled]),
+    &.dropdown-open {
+      background-color: darken($color-accent, 15%);
+    }
+
+    body[modality="keyboard"] &:focus {
+      background-color: darken($color-accent, 25%);
+    }
+  }
+
+  &.color-succsess {
+    background-color: $color-success;
+
+    &:hover:not([disabled]),
+    &.dropdown-open {
+      background-color: darken($color-success, 15%);
+    }
+
+    body[modality="keyboard"] &:focus {
+      background-color: darken($color-success, 25%);
+    }
+  }
+
+  &.color-warning {
+    background-color: $color-warning;
+
+    &:hover:not([disabled]),
+    &.dropdown-open {
+      background-color: darken($color-warning, 15%);
+    }
+
+    body[modality="keyboard"] &:focus {
+      background-color: darken($color-warning, 25%);
+    }
+  }
+
+  &.color-danger {
+    background-color: $color-danger;
+
+    &:hover:not([disabled]),
+    &.dropdown-open {
+      background-color: darken($color-danger, 15%);
+    }
+
+    body[modality="keyboard"] &:focus {
+      background-color: darken($color-danger, 25%);
+    }
+  }
 }
 </style>
