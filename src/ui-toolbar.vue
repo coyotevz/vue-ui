@@ -112,7 +112,7 @@ export default {
 .ui-toolbar {
   font-family: $font-stack;
   display: flex;
-  height: 56px;
+  height: $header-height;
   align-items: center;
   font-size: 18px;
   position: relative;
@@ -175,6 +175,7 @@ export default {
 }
 
 .ui-toolbar-left {
+  width: $brand-holder-width;
   display: flex;
   align-items: center;
   flex-shrink: 0;

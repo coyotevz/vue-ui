@@ -10,6 +10,11 @@ $font-stack: $preferred_font;
 @import "color-definitions";
 @import "functions";
 
+/* Layout */
+$drawer-width: 216px !default;
+$brand-holder-width: $drawer-width !default;
+$header-height: 56px !default;
+
 /* Color */
 $trim-color-clases: false !default;
 
