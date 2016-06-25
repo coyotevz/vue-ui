@@ -28,12 +28,13 @@ export default {
   name: 'ui-icon-button',
 
   props: {
-    type: {
-      type: String,
-      default: 'normal', // 'normal' or 'flat' or 'clear'
-      coerce (type) {
-        return 'ui-icon-button-' + type
-      }
+    flat: {
+      type: Boolean,
+      default: false
+    },
+    clear: {
+      type: Boolean,
+      defualt: false
     },
     color: {
       type: String,
@@ -55,8 +56,17 @@ export default {
 
   computed: {
     styleClasses () {
-      console.log(this.type, this.color)
-      let classes = [this.type, this.color]
+      let classes = [this.color]
+      if (this.flat & this.clear) {
+        console.warn('Must specify one type of ui-icon-button: flat or clear')
+      }
+      if (this.flat) {
+        classes.push('ui-icon-button-flat')
+      } else if (this.clear) {
+        classes.push('ui-icon-button-clear')
+      } else {
+        classes.push('ui-icon-button-normal')
+      }
       return classes
     }
   },

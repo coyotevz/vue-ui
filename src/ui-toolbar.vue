@@ -1,7 +1,7 @@
 <template>
   <header class="ui-toolbar" :class="styleClasses">
     <div class="ui-toolbar-left">
-      <ui-icon-button class="ui-toolbar-nav-icon" type="clear"
+      <ui-icon-button class="ui-toolbar-nav-icon" clear
         :color="iconColor" :icon="navIcon" @click="navIconClick"
         v-if="!hideNavIcon"></ui-icon-button>
 

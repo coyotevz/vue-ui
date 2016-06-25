@@ -4,9 +4,9 @@
 
       <ui-toolbar class="ui-layout-header" brand="Vue UI" :title="currentComponent.title" colored fixed>
         <div slot="actions">
-          <ui-icon-button type="clear" color="white" icon="arrow_back"></ui-icon-button>
-          <ui-icon-button type="clear" color="white" icon="star_border"></ui-icon-button>
-          <ui-icon-button type="clear" color="white" icon="more_vert" has-dropdown-menu
+          <ui-icon-button clear color="white" icon="arrow_back"></ui-icon-button>
+          <ui-icon-button clear color="white" icon="star_border"></ui-icon-button>
+          <ui-icon-button clear color="white" icon="more_vert" has-dropdown-menu
             :menu-options="menu" dropdown-position="bottom right"></ui-icon-button>
         </div>
       </ui-toolbar>
