@@ -11,7 +11,7 @@
         </div>
       </ui-toolbar>
 
-      <div class="sidebar desktop">
+      <aside class="ui-layout-sidebar desktop">
         <div class="brand">
           <h1 class="title">VUE UI</h1>
         </div>
@@ -22,7 +22,7 @@
             :class="{ 'active': currentComponent.id === item.id }"
             :href="'#/' + item.id" v-text="item.title"></a>
         </ul>
-      </div>
+      </aside>
 
       <main class="page ui-layout-content">
         <div class="container">

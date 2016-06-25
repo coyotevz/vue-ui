@@ -116,6 +116,7 @@ export default {
   align-items: center;
   font-size: 18px;
   position: relative;
+  flex-shrink: 0;
 
   &:not(.ui-toolbar-raise):not(.ui-toolbar-colored) {
     border-bottom: 1px solid $color-primary-divider;
@@ -153,11 +154,6 @@ export default {
       top: 0;
     }
   }
-}
-
-.ui-toolbar-fixed {
-  position: fixed;
-  width: 100vw;
 }
 
 .ui-toolbar-raised {
