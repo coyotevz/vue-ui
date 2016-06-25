@@ -8,7 +8,7 @@
         <slot><span v-text="text"></span></slot>
       </div>
 
-      <ui-icon-button class="ui-alert-close-button" icon="&#xE5CD"
+      <ui-icon-button class="ui-alert-close-button" icon="&#xE5CD" type="clear"
         arial-label="Close" @click="close" v-if="dismissible"></ui-icon-button>
     </div>
   </div>
