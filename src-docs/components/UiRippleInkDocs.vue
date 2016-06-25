@@ -1,7 +1,5 @@
 <template>
   <section class="section section-ui-ripple-ink">
-    <h2 class="section-heading">UiRippleInk</h2>
-
     <p>UiRippleInk allows you to show a ripple ink on a material when it is
       touched or clicked. Using CSS, you can customize the ripple color and
       opacity.</p>

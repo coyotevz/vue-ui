@@ -12,10 +12,6 @@
       </ui-toolbar>
 
       <aside class="ui-layout-sidebar desktop">
-        <div class="brand">
-          <h1 class="title">VUE UI</h1>
-        </div>
-
         <ul class="menu">
           <div class="menu-header">Components</div>
           <a class="menu-item" v-for="item in menu | orderBy 'id'"
@@ -133,11 +129,6 @@ body {
   // max-width: 600px;
   font-family: Roboto, Helvetica, sans-serif;
   // text-align: center;
-}
-
-#app .menu a {
-  color: #42b983;
-  text-decoration: none;
 }
 
 .special-note {

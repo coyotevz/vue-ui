@@ -1,7 +1,5 @@
 <template>
   <section class="section section-ui-alert">
-    <h2 class="section-heading">UiAlert</h2>
-
     <p>UiAlert are used to show inline alert message to the user. Supported
       types are <code>info</code>, <code>success</code>, <code>warning</code>
       and <code>error</code>.</p>
