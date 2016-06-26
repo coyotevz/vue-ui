@@ -31,6 +31,18 @@
         </image-pane>
       </div>
 
+      <pre><code class="html">
+      &lt;div class="color-blue" v-el:show style="background-image: 'some-image.jpg'"&gt;
+        &lt;ui-ripple-ink :trigger="$els.show"&gt;&lt;/ui-ripple-ink&gt;
+      &lt;/div&gt;
+      </code></pre>
+
+      <pre><code>
+      .color-blue {
+        color: blue;
+      }
+      </code></pre>
+
       <h4>Color: orange, Opacity: 0.95</h4>
       <div class="group the-simpsons custom-color color-orange custom-opacity">
         <image-pane inline-template :image="simpson.image"
@@ -41,6 +53,21 @@
           </div>
         </image-pane>
       </div>
+
+      <pre><code class="html">
+      &lt;div class="color-orange" v-el:portait style="background-image: 'some-image.jpg'"&gt;
+        &lt;ui-ripple-ink :trigger="$els.portait"&gt;&lt;/ui-ripple-ink&gt;
+      &lt;/div&gt;
+      </code></pre>
+
+      <pre><code>
+      .color-orange {
+        color: orange;
+      }
+      .color-orange .ui-ripple-ink .ripple.held {
+        opacity: 0.95;
+      }
+      </code></pre>
 
     </div>
   </section>
