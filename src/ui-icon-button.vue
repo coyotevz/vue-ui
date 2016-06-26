@@ -34,7 +34,7 @@ export default {
     },
     clear: {
       type: Boolean,
-      defualt: false
+      default: false
     },
     color: {
       type: String,
