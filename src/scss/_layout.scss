@@ -69,7 +69,7 @@ body {
   margin-left: $drawer-width;
   position: relative;
   display: inline-block;
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
   flex-grow: 1;
   z-index: 1;
